@@ -8,7 +8,6 @@ function App(): JSX.Element {
   return (
     <body>
       <NavigationBar />
-      <hr />
       <MainBody />
       <hr />
       <Footer />

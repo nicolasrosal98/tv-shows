@@ -18,7 +18,11 @@ interface IEpisode {
 }
 
 function IEpisodes(episodes: IEpisode): JSX.Element {
-  return <></>;
+  return (
+    <div className="card">
+
+    </div>
+  );
 }
 
 export default IEpisodes;
