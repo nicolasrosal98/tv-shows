@@ -1,8 +1,5 @@
 function MainHeader(): JSX.Element {
-    return (
-        <>
-        </>
-    );
-};
+  return <></>;
+}
 
 export default MainHeader;

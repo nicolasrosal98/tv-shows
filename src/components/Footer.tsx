@@ -1,8 +1,5 @@
 function Footer(): JSX.Element {
-    return (
-        <>
-        </>
-    );
-};
+  return <></>;
+}
 
 export default Footer;

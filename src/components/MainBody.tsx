@@ -1,8 +1,5 @@
 function MainBody(): JSX.Element {
-    return (
-        <>
-        </>
-    );
-};
+  return <></>;
+}
 
 export default MainBody;
