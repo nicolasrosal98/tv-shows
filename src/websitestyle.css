@@ -93,3 +93,22 @@ nav ul li a {
   color: #ee4f37;
   background-color: #ffffff;
 }
+
+/*CSS for Footer*/
+.footer {
+  background-color: #06141c;
+  padding-left: 30px;
+}
+.footer p {
+  color: #ffffff;
+  padding-left: 28px;
+  padding-bottom: 30px;
+}
+.footer a {
+  text-decoration: none;
+  color: #ee4f37;
+}
+.footer .logo {
+  width: 150px;
+  cursor: pointer;
+}
