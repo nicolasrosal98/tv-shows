@@ -24,7 +24,7 @@ function Episode(episode: IEpisode): JSX.Element {
     : (episodeNum = `S0${episode.season}E${episode.number}`);
 
   let episodeSum = episode.summary;
-  episodeSum = episodeSum.substring(3, episodeSum.length - 4);
+  episodeSum = episodeSum.replace(/<\/?[^>]+(>|$)/g, "");
 
   return (
     <div className="card">
