@@ -27,7 +27,7 @@ function MainBody(): JSX.Element {
                 setSearchValue(event.target.value);
               }}
             />
-            <p>Displaying 73/73 episodes</p>
+            <p>Displaying {selectedEpisodes.length}/73 episodes</p>
           </>
         </form>
       </nav>
