@@ -1,7 +1,15 @@
+import { useState } from "react";
 import Episode from "./IEpisodes";
 import episodes from "../episodes.json";
 
 function MainBody(): JSX.Element {
+  const [searchValue, setSearchValue] = useState<string>("");
+  const selectedEpisodes = episodes.filter(
+    (episode) =>
+      episode.summary.includes(searchValue) ||
+      episode.name.includes(searchValue)
+  );
+
   return (
     <div className="body-div">
       <nav>
@@ -13,16 +21,21 @@ function MainBody(): JSX.Element {
             <option value="cat">Option2</option>
           </select>
           <>
-            <input type="text" placeholder="Search.."></input>
-            <p>Displaying 73/73 episodes</p>
+            <input
+              value={searchValue}
+              onChange={(event) => {
+                setSearchValue(event.target.value);
+              }}
+            />
+            <p>Displaying {selectedEpisodes.length}/73 episodes</p>
           </>
         </form>
       </nav>
       <div className="grid">
         <>
-          {episodes.map((episode) => (
+          {selectedEpisodes.map((episode) => (
             <Episode
-              id={episode.number}
+              id={episode.id}
               url={episode.url}
               name={episode.name}
               season={episode.season}
