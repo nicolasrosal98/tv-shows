@@ -112,3 +112,31 @@ nav ul li a {
   width: 150px;
   cursor: pointer;
 }
+
+.body-div nav {
+  display: flex;
+  align-items: center;
+  padding: 0px 2%;
+}
+.body-div nav form {
+  flex: 1;
+  text-align: right;
+}
+.body-div nav form select {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+  background-color: #ee4f37;
+  color: #ffffff;
+}
+.body-div nav form input {
+  margin: 2px 5px 5px 20px;
+  border-radius: 5px;
+  padding: 8px;
+}
+.body-div nav form p {
+  color: #383838;
+  font-size: 15px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
