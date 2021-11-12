@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { IEpisode } from "./IEpisodes";
 import Episode from "./IEpisodes";
-import episodes from "../episodes.json";
+// import episodes from "../episodes.json";
 
 function MainBody(): JSX.Element {
   const [searchValue, setSearchValue] = useState<string>("");
   const [dropDownValue, setDropDownValue] = useState<string>("");
+  const [episodes, setEpisodes] = useState<IEpisode[]>([]);
+
+  useEffect(() => {
+    const fetchEpisodes = async () => {
+      const response = await fetch("https://api.tvmaze.com/shows/82/episodes");
+      const jsonBody: IEpisode[] = await response.json();
+      setEpisodes(jsonBody);
+    };
+
+    fetchEpisodes();
+  }, []);
 
   const selectedEpisodesDropDown = episodes.filter(
     (episode) =>
@@ -22,10 +34,6 @@ function MainBody(): JSX.Element {
       ? `S0${episode.season}E0${episode.number} - ${episode.name}`
       : `S0${episode.season}E${episode.number} - ${episode.name}`
   );
-
-  // const resetDropDown = () => {
-  //   document.getElementById("episode-select").selectedValue = "";
-  // };
 
   return (
     <div className="body-div">
