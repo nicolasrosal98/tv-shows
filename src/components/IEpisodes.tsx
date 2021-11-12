@@ -10,8 +10,8 @@ interface IEpisode {
   airstamp: string;
   runtime: number;
   image: {
-    medium: string;
-    original: string;
+    medium: string | null | undefined;
+    original: string | null | undefined;
   };
   summary: string;
   _links: { self: { href: string } };
@@ -26,11 +26,23 @@ function Episode(episode: IEpisode): JSX.Element {
   let episodeSum = episode.summary;
   episodeSum = episodeSum.replace(/<\/?[^>]+(>|$)/g, "");
 
+  const imgFallback =
+    "	https://static.tvmaze.com/uploads/images/original_untouched/198/495237.jpg";
+
   return (
     <div className="card">
       <h3>{episode.name}</h3>
       <h5>{episodeNum}</h5>
-      <img src={episode.image.medium} alt={episode.name} />
+      <img
+        src={
+          episode.image.medium
+            ? episode.image.medium
+            : episode.image.original
+            ? episode.image.original
+            : imgFallback
+        }
+        alt={episode.name}
+      />
       <p>{episodeSum}</p>
       <button onClick={() => window.open(episode.url)}>More Information</button>
     </div>
