@@ -14,8 +14,8 @@ function MainBody(): JSX.Element {
 
   const selectedEpisodesSearch = episodes.filter(
     (episode) =>
-      episode.summary.includes(searchValue) ||
-      episode.name.includes(searchValue)
+      episode.summary.toLowerCase().includes(searchValue) ||
+      episode.name.toLowerCase().includes(searchValue)
   );
   const selectedDropdown = episodes.map((episode) =>
     episode.number <= 9
