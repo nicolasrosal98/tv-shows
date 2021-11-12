@@ -10,8 +10,8 @@ interface IEpisode {
   airstamp: string;
   runtime: number;
   image: {
-    medium: string | null;
-    original: string | null;
+    medium: string | null | undefined;
+    original: string | null | undefined;
   };
   summary: string;
   _links: { self: { href: string } };
