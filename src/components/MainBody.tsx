@@ -43,6 +43,7 @@ function MainBody(): JSX.Element {
           <select
             name="episode"
             id="episode-select"
+            value={dropDownValue}
             onChange={(event) => {
               setDropDownValue(event.target.value);
               setSearchValue("");
@@ -64,7 +65,6 @@ function MainBody(): JSX.Element {
               onChange={(event) => {
                 setSearchValue(event.target.value);
                 setDropDownValue("");
-                // resetDropDown;
               }}
             />
             <p>Displaying {selectedEpisodesSearch.length}/73 episodes</p>
